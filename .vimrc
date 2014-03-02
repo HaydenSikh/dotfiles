@@ -79,11 +79,32 @@ nnoremap <F5> :GundoToggle<CR>
 
 " toggle paste mode via F10
 set pastetoggle=<F10>
+
+" -------- Tab navigation ------------------------
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
 " ================================================
 
 if has("win32") || has("win16")
-	set guifont=DejaVu_Sans_Mono_for_Powerline:h8:cANSI
+	set guifont=DejaVu_Sans_Mono_for_Powerline:h8:cANSIA
+
+	" Show block cursor in command mode, line cursor in edit mode
+	let &t_ti.="\e[1 q"
+	let &t_SI.="\e[5 q"
+	let &t_EI.="\e[1 q"
+	let &t_te.="\e[0 q"
+elseif has("autocmd")
+	" Show block cursor in command mode, line cursor in edit mode
+	au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+	au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+	au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
 endif
+
 colorscheme desert
 
 " When vimrc is edited, reload it
