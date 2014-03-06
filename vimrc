@@ -77,6 +77,10 @@ set cursorline " highlight current line
 " Show the powerline symbols
 let g:airline_powerline_fonts = 1
 
+" Configure what is ignored by the CtrlP plugin
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](\.git|target)$'
+  \ }
 
 " ======= Key bindings ===========================
  "toggle search hilighting with the F3 key
