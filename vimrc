@@ -3,8 +3,14 @@ filetype off
 
 " ======= Vim Plugin Bundles =====================
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if has("win32") || has("win16")
+	set rtp+=~/vimfiles/bundle/vundle/
+	let path='~/vimfiles/bundle'
+	call vundle#rc(path)
+else
+	set rtp+=~/.vim/bundle/vundle/
+	call vundle#rc()
+endif
 
 " let Vundle manage Vundle, required
 Bundle 'gmarik/vundle'
@@ -18,6 +24,7 @@ Bundle 'EasyMotion'
 Bundle 'camelcasemotion'
 Bundle 'The-NERD-tree'
 Bundle 'ctrlp.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 " -------- Scala support -------------------------
 Bundle 'derekwyatt/vim-scala'
@@ -91,14 +98,14 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 " ================================================
 
 if has("win32") || has("win16")
-	set guifont=DejaVu_Sans_Mono_for_Powerline:h8:cANSIA
+	set guifont=DejaVu_Sans_Mono_for_Powerline:h8:cANSI
 
 	" Show block cursor in command mode, line cursor in edit mode
 	let &t_ti.="\e[1 q"
 	let &t_SI.="\e[5 q"
 	let &t_EI.="\e[1 q"
 	let &t_te.="\e[0 q"
-elseif has("autocmd")
+elseif has("autocmd") && !has("win32unix")
 	" Show block cursor in command mode, line cursor in edit mode
 	au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
 	au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
