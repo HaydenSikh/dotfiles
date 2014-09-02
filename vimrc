@@ -4,50 +4,52 @@ filetype off
 " ======= Vim Plugin Bundles =====================
 " set the runtime path to include Vundle and initialize
 if has("win32") || has("win16")
-	set rtp+=~/vimfiles/bundle/vundle/
+	set rtp+=~/vimfiles/bundle/Vundle.vim/
 	let path='~/vimfiles/bundle'
-	call vundle#rc(path)
+	call vundle#begin(path)
 else
-	set rtp+=~/.vim/bundle/vundle/
-	call vundle#rc()
+	set rtp+=~/.vim/bundle/Vundle.vim/
+	call vundle#begin()
 endif
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " -------- Core ----------------------------------
-Bundle 'tpope/vim-sensible'
-Bundle 'bling/vim-airline'
+Plugin 'tpope/vim-sensible'
+Plugin 'bling/vim-airline'
 
 " -------- Navigation ----------------------------
-Bundle 'EasyMotion'
-Bundle 'camelcasemotion'
-Bundle 'The-NERD-tree'
-Bundle 'ctrlp.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'EasyMotion'
+Plugin 'camelcasemotion'
+Plugin 'The-NERD-tree'
+Plugin 'ctrlp.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " -------- Scala support -------------------------
-Bundle 'derekwyatt/vim-scala'
-Bundle 'derekwyatt/vim-sbt'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-sbt'
 
 " -------- Color schemes -------------------------
-Bundle 'molokai'
-Bundle 'Solarized'
+Plugin 'molokai'
+Plugin 'Solarized'
 
 " -------- Git integration -----------------------
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " -------- Other ---------------------------------
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Syntastic'
-Bundle 'Gundo'
-Bundle 'majutsushi/tagbar'
-Bundle 'css_color.vim'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'Syntastic'
+Plugin 'Gundo'
+Plugin 'majutsushi/tagbar'
+Plugin 'css_color.vim'
 
+" required to wrap up plugin installation
+call vundle#end()
+filetype plugin indent on
 " ================================================
 
-filetype plugin indent on
 syntax on
 
 set fileencodings=utf-8,default,latin1
