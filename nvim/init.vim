@@ -10,7 +10,7 @@ Plug 'preservim/vim-indent-guides'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'scalameta/nvim-metals'
-Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'cloudhead/neovim-fuzzy'
@@ -106,7 +106,7 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 
-" --- NerdTree ---------------------------------------------------------------
+" --- UndoTree ---------------------------------------------------------------
 nnoremap <leader>un :UndotreeToggle<CR>
 
 " --- Telescope --------------------------------------------------------------
@@ -117,8 +117,8 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 " === Context-dependant Config ===============================================
-if exists("g:neovide")
-    " Put anything you want to happen only in Neovide here
+if has("win32")
+    set guifont=FantasqueSansM\ Nerd\ Font\ Mono:h8
+elseif has("macunix")
     set guifont=FantasqueSansMono_Nerd_Font_Mono:h9
 endif
-
