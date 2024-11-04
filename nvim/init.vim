@@ -90,6 +90,10 @@ let mapleader = ","
 
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
+" Use <C-Insert> and <S-Insert> to copy/paste from system clipboard
+vnoremap <C-Insert> "+y
+noremap! <S-Insert> <C-R><C-O>+
+
 " -------- Tab navigation ----------------------------------------------------
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
