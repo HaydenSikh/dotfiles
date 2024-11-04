@@ -101,8 +101,14 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
-else
+elif hash neovide 2> /dev/null; then
+  export EDITOR='neovide'
+elif hash mvim 2> /dev/null; then
   export EDITOR='mvim'
+elif hash nvim 2> /dev/null; then
+  export EDITOR='nvim'
+else
+  export EDITOR='vim'
 fi
 
 # Compilation flags
