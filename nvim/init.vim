@@ -4,15 +4,16 @@
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'preservim/vim-indent-guides'
+Plug 'folke/twilight.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'scalameta/nvim-metals'
-" Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'cloudhead/neovim-fuzzy'
@@ -23,13 +24,11 @@ Plug 'junegunn/vim-easy-align'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
 "┌───────────────────────────────────────────────────────────────────────────┐
 "│ Syntax                                                                    │
 "└───────────────────────────────────────────────────────────────────────────┘
-" Plug 'derekwyatt/vim-scala'
 Plug 'HiPhish/jinja.vim'
 Plug 'jvirtanen/vim-hocon'
 Plug 'hashivim/vim-terraform'
