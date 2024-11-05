@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'preservim/vim-indent-guides'
 Plug 'folke/twilight.nvim'
+Plug 'bling/vim-bufferline'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
@@ -19,6 +20,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'thinca/vim-localrc'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -36,8 +38,11 @@ Plug 'hashivim/vim-terraform'
 "┌───────────────────────────────────────────────────────────────────────────┐
 "│ Color schemes                                                             │
 "└───────────────────────────────────────────────────────────────────────────┘
-Plug 'morhetz/gruvbox'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'morhetz/gruvbox'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'sainnhe/everforest'
+Plug 'tomasr/molokai'
 
 call plug#end()
 
@@ -55,6 +60,7 @@ set smartcase
 
 set cursorline " highlight current line
 set colorcolumn=80,120
+set number
 
 colorscheme desert
 
