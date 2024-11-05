@@ -152,10 +152,19 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 "╔═══════════════════════════════════════════════════════════════════════════╗
-"║ Content=dependant config                                                  ║
+"║ Content-dependant config                                                  ║
 "╚═══════════════════════════════════════════════════════════════════════════╝
 if has("win32")
-    set guifont=FantasqueSansM\ Nerd\ Font\ Mono:h8
+  set guifont=FantasqueSansM\ Nerd\ Font\ Mono:h8
 elseif has("macunix")
-    set guifont=FantasqueSansMono_Nerd_Font_Mono:h9
+  set guifont=FantasqueSansMono_Nerd_Font_Mono:h9
+endif
+
+if exists('g:neovide')
+ map <C-=> :let g:neovide_scale_factor = g:neovide_scale_factor + 0.1<CR>
+ map <C--> :let g:neovide_scale_factor = g:neovide_scale_factor - 0.1<CR>
+ map <C-0> :let g:neovide_scale_factor = 1<CR>
+
+ map <C-ScrollWheelUp> :let g:neovide_scale_factor = g:neovide_scale_factor + 0.1<CR>
+ map <C-ScrollWheelDown> :let g:neovide_scale_factor = g:neovide_scale_factor - 0.1<CR>
 endif
