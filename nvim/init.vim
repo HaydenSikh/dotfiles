@@ -108,6 +108,16 @@ if has("persistent_undo")
 endif
 
 
+"╔═══════════════════════════════════════════════════════════════════════════╗
+"║ Functions                                                                 ║
+"╚═══════════════════════════════════════════════════════════════════════════╝
+
+"╔═══════════════════════════════════════════════════════════════════════════╗
+"║ Command bindings                                                          ║
+"╚═══════════════════════════════════════════════════════════════════════════╝
+" :Bwipeout[!]
+" wipe all deleted/unloaded buffers
+command! -bar -bang Bwipeout call misc#bwipeout(<bang>0)
 
 "╔═══════════════════════════════════════════════════════════════════════════╗
 "║ Key bindings                                                              ║
@@ -117,8 +127,12 @@ let mapleader = ","
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Use <C-Insert> and <S-Insert> to copy/paste from system clipboard
+" these mimic Windows alternatives to C-c and C-v that work from the shell
 vnoremap <C-Insert> "+y
 noremap! <S-Insert> <C-R><C-O>+
+
+" toggle search match highlighting
+nnoremap <leader>hl :set hls!<CR>
 
 "┌───────────────────────────────────────────────────────────────────────────┐
 "│ Tab navigation                                                            │
