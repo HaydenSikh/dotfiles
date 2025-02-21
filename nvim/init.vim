@@ -21,6 +21,7 @@ Plug 'cloudhead/neovim-fuzzy'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'thinca/vim-localrc'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'ctrlpvim/ctrlp.vim'
