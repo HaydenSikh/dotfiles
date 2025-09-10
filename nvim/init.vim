@@ -194,7 +194,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 "╔═══════════════════════════════════════════════════════════════════════════╗
-"║ Content-dependant config                                                  ║
+"║ Context-dependant config                                                  ║
 "╚═══════════════════════════════════════════════════════════════════════════╝
 if has("win32")
   set guifont=FantasqueSansM\ Nerd\ Font\ Mono:h8
